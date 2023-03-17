@@ -1,0 +1,114 @@
+* {
+    box-sizing: border-box;
+  }
+
+body {
+    /*  viewport units: vh (viewport height), vw, vmin (smallest between vh & vw))  */
+      height: 100vh;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 10vw, 100vw, 10vw;
+      align-items: center;
+}
+
+col1{
+     grid-column: 1/2;
+     display: flex;
+     align-items: center;
+     flex-direction: column;
+     
+}
+
+col1 > * {
+    padding: 5px;
+    margin: 20vmin;
+}
+
+key {
+    background-color: grey;
+    padding: 10vmin;
+}
+
+board {
+    grid-column: 2/3;
+    height: 100vh;
+    /* background-color: greenyellow; */
+    display: grid;
+    grid-template-rows: repeat(6, auto);
+    padding: 5 vmin;
+}
+
+div {
+    border-radius: 50%;
+    border: .1vmin black;
+    border-style: solid;
+}
+
+row1 {
+    grid-row-start: 7;
+    grid-row-end: 6;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;    
+}
+
+row2 {
+    grid-row-start: 6;
+    grid-row-end: 5;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;    
+}
+
+row3 {
+    grid-row-start: 5;
+    grid-row-end: 4;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;    
+}
+
+row4 {
+    grid-row-start: 4;
+    grid-row-end: 3;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;    
+}
+
+row5 {
+    grid-row-start: 3;
+    grid-row-end: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;    
+}
+
+row6 {
+    grid-row-start: 2;
+    grid-row-end: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;    
+}
+
+col3 {
+    grid-column: 3/4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+col3 > button {
+    padding: 5px;
+    margin: 20vmin;
+}
+
+/* #Reset {
+flex-basis: auto;
+}
+
+#Enter {
+    flex-basis: auto;
+} */
