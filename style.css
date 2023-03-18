@@ -6,6 +6,10 @@ body {
     /*  viewport units: vh (viewport height), vw, vmin (smallest between vh & vw))  */
       height: 80vh;
       width: 100vw;
+      background-image: url("https://scontent-dfw5-1.xx.fbcdn.net/v/t39.30808-6/296721713_8156138357737219_8402936684182766551_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=730e14&_nc_ohc=EZrxu3mDrB0AX_MHDQm&_nc_ht=scontent-dfw5-1.xx&oh=00_AfDmlGbO_2R_wwdko3U1iBuhVCLXIY0EcikxAAt10S5KbQ&oe=641A43DA");
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
       margin: 0;
       display: grid;
       grid-template-columns: 60vmin 80vmin 60vmin;
@@ -27,6 +31,10 @@ col1 > * {
     text-align: center;
 }
 
+h2 {
+    color: white;
+}
+
 key {
     background-color: grey;
     padding: 10vmin;
@@ -35,7 +43,7 @@ key {
 board {
     grid-column: 2/3;
     height: 100vh;
-    background-color: greenyellow;
+    background-color: #f6c492;
     display: grid;
     grid-template-rows: repeat(6, auto);
     row-gap: 2vmin;
@@ -82,7 +90,7 @@ row6 {
 
 div {
     border-radius: 50%;
-    border: 1vmin black;
+    border: .5vmin black;
     border-style: solid;
     grid-column: span 1;
 }
