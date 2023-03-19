@@ -14,11 +14,10 @@ let board;
 let winner;
 let currentColorIndex = -1;
 let countButtonEnterClicks = 0;
-let chkGuess;
 
 	/*----- cached elements  -----*/
 const divs = [...document.querySelectorAll('div')];
-// const h2 = document.querySelector('h2');
+const h2 = document.querySelector('h2');
 
 
 	/*----- event listeners -----*/
@@ -28,53 +27,24 @@ document.querySelector('board').addEventListener('click', (evt) => {
     if (idx === -1) return;
     const nextColorIndex = ++currentColorIndex % colors.length;
      evt.target.style.backgroundColor = colors[nextColorIndex];
+    });
+
+    const enter = document.getElementById('Enter').addEventListener('click', () => {
+    board.forEach(function(pegVal, idx) {
+    const pegEl = document.getElementById(`sq-${idx}`);
+    let col = pegEl.style.backgroundColor;
+       // console.log(col);
+    board[idx] = colors.indexOf(col);
+    });
+    winner = getWinner();
 });
 
-const enter = document.getElementById('Enter').addEventListener('click', () => {
-    board.forEach(function(pegVal, idx) {
-        const pegEl = document.getElementById(`sq-${idx}`);
-        let col = pegEl.style.backgroundColor;
-        console.log(col);
-        board[idx] = colors.indexOf(col);
-    });
-    if (countButtonEnterClicks === 0) {
-    rowMv = boardMvGen(board, 4);
-   let chkGuess = rowMv.next();
-   countButtonEnterClicks += 1;
-   console.log(chkGuess);
-   return chkGuess;
-            // rowMv.next());
-    // return rowMv.next();
-    } 
-    else if (countButtonEnterClicks >= 1){
-    let chkGuess = rowMv.next();
-    countButtonEnterClicks += 1;
-    console.log(chkGuess);
-    return chkGuess;
-            // rowMv.next());
-    // // return rowMv.next() ;
-    }
-});
 
 	/*----- functions -----*/
 init();
 
 function init() {
-    board = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] ;
-// [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null];
-    // [null, null, null, null],
-    // [null, null, null, null],
-    // [null, null, null, null],
-    // [null, null, null, null],
-    // [null, null, null, null],
-    // [null, null, null, null],
-    // [[0, 0, 0, 0],
-//     [0, 0, 0, 0],
-//     [0, 0, 0, 0],
-//     [0, 0, 0, 0],
-//     [0, 0, 0, 0],
-//     [0, 0, 0, 0],
-// ]
+board = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] ;
 winner = null;
 render();
 };
@@ -109,3 +79,40 @@ function* boardMvGen(board, rowSize) {
 }
 
 let rowMv = boardMvGen;
+
+function chkGuess() {
+    if (countButtonEnterClicks === 0) {
+    rowMv = boardMvGen(board, 4);
+   let guess = rowMv.next();
+   countButtonEnterClicks += 1;
+   console.log(guess);
+   return guess;
+   // rowMv.next());
+    // return rowMv.next();
+    } 
+    else if (countButtonEnterClicks >= 1){
+    let guess = rowMv.next();
+    countButtonEnterClicks += 1;
+    console.log(guess);
+    return guess;
+                // rowMv.next());
+    // // return rowMv.next() ;
+    }
+};
+
+
+function getWinner() {
+    if (cGuess === compChoice) {
+        h2.innerHTML = 'You win!!!'
+        return 'true';
+    } if (cGuess[0] === compChoice[0]) {
+        h2.innerHTML = 'You got postiion 1 right but try again!';  
+    }
+    //  if (chkGuess[1] === compChoice[1]) {
+    //     h2.innerHTML = 'You got postiion 2 right but try again!'
+    // } if (chkGuess[2] === compChoice[2]) {
+    //     h2.innerHTML = 'You got postiion 3 right but try again!'
+    // } if (chkGuess[3] === compChoice[3]) {
+    //     h2.innerHTML = 'You got postiion 2 right but try again!'
+    // }
+}
