@@ -14,7 +14,6 @@ let board;
 let currentColorIndex = -1;
 let countButtonEnterClicks = 0;
 
-
 	/*----- cached elements  -----*/
 const divs = [...document.querySelectorAll('div')];
 const h2 = document.querySelector('h2');
@@ -22,12 +21,13 @@ const h2 = document.querySelector('h2');
 
 	/*----- event listeners -----*/
 const plyAgn = document.getElementById('Reset').addEventListener('click', init);
+
 document.querySelector('board').addEventListener('click', (evt) => {
     const idx = divs.indexOf(evt.target);
     if (idx === -1) return;
     const nextColorIndex = ++currentColorIndex % colors.length;
      evt.target.style.backgroundColor = colors[nextColorIndex];
-    });
+});
 
     const enter = document.getElementById('Enter').addEventListener('click', () => {
     board.forEach(function(pegVal, idx) {
@@ -45,6 +45,7 @@ init();
 
 function init() {
 board = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] ;
+h2.innerHTML = 'Can you win and become...the MasterMind???'
 render();
 };
 
@@ -68,7 +69,7 @@ const getCompAnswer = () => {
     return choices;
 };
 
-let compChoice = getCompAnswer();
+const compChoice = getCompAnswer();
 console.log(compChoice);
 
 function* boardMvGen(board, rowSize) {
@@ -99,24 +100,27 @@ function chkGuess() {
     }
 };
 
-function equalsCheck(pg, ca) {
-    let result = null;
-    for (let i = 0; i < ca.length; i++)
-    if (pg[i] !== ca[i]) {
-    return false;
-    } else {
-    return true;
-    }
-    return result;
+const equalsCheck = (pg, ca) =>
+    pg.every((v, i) => v === ca[i]);
+
+function checkColorInc(pg, ca) {
+const numMatch = [];
+pg.forEach(num => {
+    if (ca.includes(num)) {
+        numMatch.push(num);
+        } else return;
+    });
+    console.log(numMatch);    
+    board.forEach(function(pegVal, idx) {
+        const pegEl = document.getElementById(`sq-${idx}`);
+        console.log(pegVal);
+        if (numMatch.includes(pegVal)) {
+            pegEl.style.borderColor = "green";
+        } else return;
+    });
 };
 
-function getWinner() {
-    let plyrGuess = chkGuess();
-    let winner = equalsCheck(plyrGuess.value, compChoice);
-    console.log(winner);
-    if (winner === true) {
-        h2.innerHTML = 'You win!!!'
-    // } if (cGuess[0] === compChoice[0]) {
+  // } if (cGuess[0] === compChoice[0]) {
     //     h2.innerHTML = 'You got postiion 1 right but try again!';  
     // }
     //  if (chkGuess[1] === compChoice[1]) {
@@ -126,8 +130,17 @@ function getWinner() {
     // } if (chkGuess[3] === compChoice[3]) {
     //     h2.innerHTML = 'You got postiion 2 right but try again!'
     // }
+
+function getWinner() {
+    const plyrGuess = chkGuess();
+    equalsCheck(plyrGuess.value, compChoice);
+    if (equalsCheck(plyrGuess.value, compChoice) === true) {
+        h2.innerHTML = 'You win!!!'
+    } else if (equalsCheck(plyrGuess.value, compChoice) === false && countButtonEnterClicks === 6) {
+        h2.innerHTML = '<img src="https://www.mustang6g.com/forums/attachments/you-lose-good-day-sir-gif-7-gif.461102/"></img>';
     } else {
-        h2.innerHTML = 'Nah'
+        checkColorInc(plyrGuess.value, compChoice);
+        h2.innerHTML = 'Nah, try again';  
     }
 }
 
@@ -150,7 +163,6 @@ function getWinner() {
 //     const keys = Object.keys(a);
 //     return keys.every(k => equalsCheck(a[k], b[k]));
 // };
-// let winner = equalsCheck(plyrGuess.value, compChoice);
 
 // function equalsCheck(a, b) {
 //     // check the length
@@ -184,3 +196,30 @@ function getWinner() {
 //     console.log("The arrays have the same elements.");
 // else
 //     console.log("The arrays have different elements.");
+
+//semi working below minus last in array:
+// function equalsCheck(pg, ca) {
+//     console.log(pg);
+//     console.log(ca);
+//     let result = null;
+//     for (let i = 0; i < pg.length; i++)
+//         if (pg[i] !== ca[i]) {
+//         result = false;
+//         } else {
+//         result = true;
+//         }
+//     console.log(result)
+//     return result;
+// };
+//works for all but first in array
+  // function equalsCheck(a, b) {
+    //     console.log(a);
+    //     console.log(b);
+    //     for (let i = 0; i < a.length; i++) {
+    //         if (a[i] !== b[i]) {
+    //         return false;
+    //         } else {
+    //         return true;
+    //         }
+    //     }
+    // }
