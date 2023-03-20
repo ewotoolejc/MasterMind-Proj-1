@@ -41,7 +41,8 @@ col1{
      grid-column: 1/2;
      display: flex;
      align-items: center;
-     flex-direction: column; 
+     flex-direction: column;
+     justify-content: space-evenly; 
 }
 
 col1 > * {
@@ -56,23 +57,26 @@ h1 {
 
 gif {
     scale: 60%;
-    margin: -5vmin;
-    padding: -5vmin;
+    margin: -10vmin;
+    padding: -10vmin;
 }
 
 key {
     background-color: grey;
     box-shadow: 10px 10px 5px 12px rgb(154, 27, 47);
-    padding: 10vmin;
+    padding: 3vmin;
     width: 80%;
+    flex-shrink: 3;
     background-image: linear-gradient(to bottom right, rgb(168, 146, 98), rgb(154, 27, 47));
 }
 
 key > * {
     color: whitesmoke;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    font-size: x-large;
 }
 
-board {
+main {
     grid-column: 2/3;
     height: 100vh;
     background-image: radial-gradient(circle, black, rgb(154, 27, 47), rgb(168, 146, 98));
@@ -83,7 +87,7 @@ board {
     border-radius: 5vmin;
 }
 
-board > * {
+main > * {
     display: grid;
     grid-template-columns: repeat(4, auto);
     grid-column: span 4;
@@ -125,6 +129,7 @@ div {
     border: .5vmin black;
     border-style: solid;
     grid-column: span 1;
+    pointer-events: none;
 }
 
 div:hover {
@@ -163,4 +168,14 @@ col3 > button {
 #Enter:hover {
     background-color: white;
     color: #f6c492;
+}
+
+.blink-bg-win {
+    /* color: #fff; */
+    animation: blinkingBackground 2s infinite;
+}
+
+@keyframes blinkingBackground {
+    0% {box-shadow: 0 0 3vmin white;}
+    50% {box-shadow: 0 0 5vmin rgb(148, 227, 208);}   
 }

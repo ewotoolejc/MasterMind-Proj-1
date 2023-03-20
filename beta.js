@@ -1,5 +1,5 @@
 	/*----- constants -----*/
-const colors = ['white', 'rgb(154, 27, 47)', 'black', 'rgb(168, 146, 98)', 'rgb(246, 196, 146)'];
+    const colors = ['white', 'rgb(154, 27, 47)', 'black', 'rgb(168, 146, 98)', 'rgb(246, 196, 146)'];
 
 	/*----- state variables -----*/
 let board;
@@ -40,15 +40,15 @@ init();
 
 function init() {
 board = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-h1.innerHTML = 'Can you win and become...the MasterMind???';
-gif.innerHTML = '';
-brd.classList.remove("blink-bg-win");
 compChoice = getCompAnswer();
 render();
 };
 
 function render() {
     renderBoard();
+    h1.innerHTML = 'Can you win and become...the MasterMind???';
+    gif.innerHTML = '';
+    brd.classList.remove("blink-bg-win");
     countButtonEnterClicks = 0;
 }
     

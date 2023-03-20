@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.cdnfonts.com/css/sherwood" rel="stylesheet">
     <title>MasterMind by EO Productions</title>
-    <link href="/style.css" rel="stylesheet" type="text/css">
-  <script defer src="/index.js"></script>
+    <link href="style.css" rel="stylesheet" type="text/css">
+  <script defer src="beta.js"></script>
 </head>
 <body>
     <col1>
@@ -20,12 +20,12 @@
         <ul>
             <li>White: Open Peg</li>
             <li>Options: <span id="red">Red</span>, <span id="black">Black</span>, <span id="gold">Gold</span>, & <span id="peach">Peach</span></li>
-            <li><span iq="yellow">Yellow</span> highlight: Color is included in answer</li>
+            <li><span id="yellow">Yellow</span> highlight: Color is included in answer</li>
         </ul>
         </p>
         </key>
     </col1>
-    <board>
+    <main>
         <row1 class="row">
             <div id="sq-0"></div>
             <div id="sq-1"></div>
@@ -62,7 +62,7 @@
             <div id="sq-22"></div>
             <div id="sq-23"></div>
         </row6>    
-    </board>
+    </main>
     <col3>
         <button id="Reset">Play Again</button>
         <button id="Enter">Enter</button>
