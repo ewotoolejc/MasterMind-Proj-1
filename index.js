@@ -6,17 +6,19 @@
 //     '3' : 'gold',
 // };
 
-const colors = ['white', 'rgb(154, 27, 47)', 'black', 'rgb(168, 146, 98)'];
+const colors = ['white', 'rgb(154, 27, 47)', 'black', 'rgb(168, 146, 98)', 'rgb(246, 196, 146)'];
 
 
 	/*----- state variables -----*/
 let board;
 let currentColorIndex = -1;
-let countButtonEnterClicks = 0;
+let countButtonEnterClicks;
+let compChoice;
 
 	/*----- cached elements  -----*/
 const divs = [...document.querySelectorAll('div')];
-const h2 = document.querySelector('h2');
+const h1 = document.querySelector('h1');
+const gif = document.querySelector('gif');
 
 
 	/*----- event listeners -----*/
@@ -45,32 +47,35 @@ init();
 
 function init() {
 board = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] ;
-h2.innerHTML = 'Can you win and become...the MasterMind???'
+h1.innerHTML = 'Can you win and become...the MasterMind???'
+compChoice = getCompAnswer();
 render();
 };
 
 function render() {
     renderBoard();
+    countButtonEnterClicks = 0;
 }
     
 function renderBoard() {
     board.forEach(function(pegVal, idx) {
     const pegEl = document.getElementById(`sq-${idx}`);
-    pegEl.style.backgroundColor = colors[pegVal]; 
+    pegEl.style.backgroundColor = colors[pegVal];
+    pegEl.style.borderColor = "black";
     });
 }
 
+console.log(compChoice);
 
-const getCompAnswer = () => {
+function getCompAnswer() {
     const choices = [];
     for (let i = 0; i < 4; i++) {
-    choices.push(Math.floor(Math.random() * 3 + 1));
+    choices.push(Math.floor(Math.random() * 4 + 1));
     }
     return choices;
 };
 
-const compChoice = getCompAnswer();
-console.log(compChoice);
+// const compChoice = getCompAnswer();
 
 function* boardMvGen(board, rowSize) {
     for (let index = 0; index < board.length; index += rowSize) {
@@ -115,32 +120,25 @@ pg.forEach(num => {
         const pegEl = document.getElementById(`sq-${idx}`);
         console.log(pegVal);
         if (numMatch.includes(pegVal)) {
-            pegEl.style.borderColor = "green";
+            pegEl.style.borderColor = "yellow";
         } else return;
     });
 };
 
-  // } if (cGuess[0] === compChoice[0]) {
-    //     h2.innerHTML = 'You got postiion 1 right but try again!';  
-    // }
-    //  if (chkGuess[1] === compChoice[1]) {
-    //     h2.innerHTML = 'You got postiion 2 right but try again!'
-    // } if (chkGuess[2] === compChoice[2]) {
-    //     h2.innerHTML = 'You got postiion 3 right but try again!'
-    // } if (chkGuess[3] === compChoice[3]) {
-    //     h2.innerHTML = 'You got postiion 2 right but try again!'
-    // }
 
 function getWinner() {
     const plyrGuess = chkGuess();
     equalsCheck(plyrGuess.value, compChoice);
     if (equalsCheck(plyrGuess.value, compChoice) === true) {
-        h2.innerHTML = 'You win!!!'
+        h1.innerText = 'You Win!!!'
+        gif.innerHTML = '<img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMDI2YzNjYTFhMjhlMzRhNmQwYmVlZGQ1OTEzOTJiNzg5ZjMxY2M2NiZjdD1n/5z9NwuPkZnvvm42Md0/giphy.gif"></img>';
     } else if (equalsCheck(plyrGuess.value, compChoice) === false && countButtonEnterClicks === 6) {
-        h2.innerHTML = '<img src="https://www.mustang6g.com/forums/attachments/you-lose-good-day-sir-gif-7-gif.461102/"></img>';
+        h1.innerText = 'You LOSE!!';
+        gif.innerHTML = '<img src="https://www.mustang6g.com/forums/attachments/you-lose-good-day-sir-gif-7-gif.461102/"></img>';
     } else {
         checkColorInc(plyrGuess.value, compChoice);
-        h2.innerHTML = 'Nah, try again';  
+        h1.innerText = "Miles says: Nah";
+        gif.innerHTML = '<img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzhlYWYzNWVjYTAwNzgzMTUzNjQ2OGJjYTVjZTBlYmY2ZGMzOWJjOCZjdD1n/snRsotHB9HZVUyRYfT/giphy.gif"></img>';
     }
 }
 

@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    font-family: 'Sherwood', sans-serif;
 }
 
 body {
@@ -16,34 +17,65 @@ body {
       align-items: center;
       justify-content: center;
 }
+#red {
+    color: rgb(154, 27, 47);
+}
+
+#black {
+    color: black;
+}
+
+#gold {
+   color: rgb(168, 146, 98); 
+}
+
+#peach {
+    color: #f6c492;
+}
+
+#yellow {
+    color: yellow;
+}
 
 col1{
      grid-column: 1/2;
      display: flex;
      align-items: center;
-     flex-direction: column;
-     
+     flex-direction: column; 
 }
 
 col1 > * {
-    padding: 5px;
     margin: 20vmin;
+}
+
+h1 {
+    color: #f6c492;
+    text-shadow: 1px 1px 2px black, 3px 3px 8px white;
     text-align: center;
 }
 
-h2 {
-    color: white;
+gif {
+    scale: 60%;
+    margin: -5vmin;
+    padding: -5vmin;
 }
 
 key {
     background-color: grey;
+    box-shadow: 10px 10px 5px 12px rgb(154, 27, 47);
     padding: 10vmin;
+    width: 80%;
+    background-image: linear-gradient(to bottom right, rgb(168, 146, 98), rgb(154, 27, 47));
+}
+
+key > * {
+    color: whitesmoke;
 }
 
 board {
     grid-column: 2/3;
     height: 100vh;
-    background-color: #f6c492;
+    background-image: radial-gradient(circle, black, rgb(154, 27, 47), rgb(168, 146, 98));
     display: grid;
     grid-template-rows: repeat(6, auto);
     row-gap: 2vmin;
@@ -95,6 +127,10 @@ div {
     grid-column: span 1;
 }
 
+div:hover {
+    background-color: rgb(148, 227, 208);
+}
+
 col3 {
     grid-column: 3/4;
     display: flex;
@@ -108,10 +144,23 @@ col3 > button {
     margin: 20vmin;
 }
 
-/* #Reset {
-
+#Reset {
+    background-color: rgb(154, 27, 47);
+    color: rgb(168, 146, 98);
+    box-shadow: 3px 3px 5px white;
 }
 
-#Enter {
+#Reset:hover {
+    background-color: black;
+    color: rgb(154, 27, 47);
+} 
 
-} */
+#Enter {
+    background-color: #f6c492;
+    box-shadow: 3px 3px 5px white;
+}
+
+#Enter:hover {
+    background-color: white;
+    color: #f6c492;
+}
