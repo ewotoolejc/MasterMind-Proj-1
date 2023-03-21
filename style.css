@@ -33,6 +33,14 @@ body {
     color: #f6c492;
 }
 
+#maroon {
+    color: rgb(93, 20, 34);
+}
+
+#mint-green {
+    color: rgb(148, 227, 208);
+}
+
 #yellow {
     color: yellow;
 }
@@ -129,7 +137,7 @@ div {
     border: .5vmin black;
     border-style: solid;
     grid-column: span 1;
-    pointer-events: none;
+    pointer-events: none; /* <- to lock/unlock board! */
 }
 
 div:hover {
