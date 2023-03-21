@@ -11,6 +11,7 @@ body {
       background-position: center center;
       background-repeat: no-repeat;
       background-attachment: fixed;
+      background-size: cover;
       margin: 0;
       display: grid;
       grid-template-columns: 60vmin 80vmin 60vmin;
@@ -65,6 +66,8 @@ h1 {
     color: #f6c492;
     text-shadow: 1px 1px 2px black, 3px 3px 8px white;
     text-align: center;
+    height: 20vh;
+    margin-bottom: 7vmin;
 }
 
 gif {
@@ -76,10 +79,16 @@ gif {
 key {
     background-color: grey;
     box-shadow: 10px 10px 5px 12px rgb(154, 27, 47);
-    padding: 3vmin;
+    padding: 5vmin;
     width: 80%;
     flex-shrink: 3;
     background-image: linear-gradient(to bottom right, rgb(168, 146, 98), rgb(154, 27, 47));
+    margin-bottom: 5vmin;
+}
+
+#key {
+    color: blue;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
 
 key > * {
@@ -144,9 +153,9 @@ div {
     pointer-events: none; /* <- to lock/unlock board! */
 }
 
-div:hover {
-    background-color: rgb(148, 227, 208);
-}
+/* div:hover {
+    border: .5vmin rgb(148, 227, 208);
+} */
 
 col3 {
     grid-column: 3/4;
@@ -157,8 +166,11 @@ col3 {
 }
 
 col3 > button {
-    padding: 5px;
+    /* height: 5vmin;
+    width: 6vmin; */
+    padding: 4vmin;
     margin: 20vmin;
+    font-size: xxx-large;
 }
 
 #Reset {
@@ -183,7 +195,6 @@ col3 > button {
 }
 
 .blink-bg-win {
-    /* color: #fff; */
     animation: blinkingBackground 2s infinite;
 }
 
