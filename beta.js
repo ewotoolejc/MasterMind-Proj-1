@@ -116,47 +116,110 @@ function chkGuess() {
     }
 };
 
+//----Below works! v1 without referencing divs-----
+// const equalsCheck = (pg, ca) =>
+//     pg.every((num, i) => num === ca[i]);
+
+// function checkColorInc(pg, ca) {
+// const numMatch = [];
+// pg.forEach(num => {
+//     if (ca.includes(num)) {
+//         numMatch.push(num);
+//         } else return;
+//     });
+//     console.log(numMatch);  
+//     board.forEach(function(pegVal, idx) {
+//         const pegEl = document.getElementById(`sq-${idx}`);
+//         console.log(pegVal);
+//         if (numMatch.includes(pegVal)) {
+//             pegEl.style.borderColor = "yellow";
+//         } else return;
+//     });
+// };
+
+
 const equalsCheck = (pg, ca) =>
     pg.every((num, i) => num === ca[i]);
 
-function checkColorInc(pg, ca) {
-const numMatch = [];
-pg.forEach(num => {
-    if (ca.includes(num)) {
+//------V2 these two work using divs only and not affecting global board, will attempt to combine-----
+// function checkColorInc(pg, ca) {
+// const numMatch = [];
+// pg.forEach(num => {
+//     if (ca.includes(num)) {
+//         numMatch.push(num);
+//         } else return;
+//     });
+//     console.log(numMatch);  
+//     const pegElsForChk = [...rowDivsForChk.value];
+//         pegElsForChk.forEach((div) => {
+//         if (numMatch.includes(colors.indexOf(div.style.backgroundColor))) {
+//             div.style.borderColor = "yellow";
+//         } else return;
+//     });
+// };
+
+// function seqMatch(pg, ca) {
+// const idxColMatch = [];
+// pg.forEach((num, i) => {
+//     if (num === ca[i]) {
+//     idxColMatch.push(i);
+//         } else return;
+//         });
+//     console.log(idxColMatch);  
+//         const pegElsForChk = [...rowDivsForChk.value];
+//         pegElsForChk.forEach((div, idx) => {
+//         if (idxColMatch.includes(idx)) {
+//             div.style.borderColor = "green";
+//         } else return;
+//     });
+// };
+
+
+function checkColorIncSeq(pg, ca) {
+    const numMatch = [];
+    const idxColMatch = [];
+    pg.forEach((num, i) => {
+        if (num === ca[i]) {
+        idxColMatch.push(i);
+        } else if (ca.includes(num)) {
         numMatch.push(num);
         } else return;
-    });
-    console.log(numMatch);  
-    board.forEach(function(pegVal, idx) {
-        const pegEl = document.getElementById(`sq-${idx}`);
-        console.log(pegVal);
-        if (numMatch.includes(pegVal)) {
-            pegEl.style.borderColor = "yellow";
-        } else return;
-    });
-};
-
-
-function seqMatch(pg, ca) {
-const idxColMatch = [];
-pg.forEach((num, i) => {
-    if (num === ca[i]) {
-    idxColMatch.push(i);
-        } else return;
         });
-    console.log(idxColMatch);  
+        // console.log(numMatch);
+        // console.log(idxColMatch);   
         const pegElsForChk = [...rowDivsForChk.value];
+        console.log(pegElsForChk);
         pegElsForChk.forEach((div, idx) => {
-        if (idxColMatch.includes(idx)) {
-            div.style.borderColor = "green";
-        } else return;
+            if (idxColMatch.includes(idx)) {
+                div.style.borderColor = "green";
+            } else if (numMatch.includes(colors.indexOf(div.style.backgroundColor))) {
+                div.style.borderColor = "yellow";};
     });
 };
+    
+// SCRAPED FOR ABOVE function seqMatch(pg, ca) {
+//     const idxColMatch = [];
+//     pg.forEach((num, i) => {
+//         if (num === ca[i]) {
+//         idxColMatch.push(i);
+//             } else return;
+//             });
+//         console.log(idxColMatch);  
+//             const pegElsForChk = [...rowDivsForChk.value];
+//             pegElsForChk.forEach((div, idx) => {
+//             if (idxColMatch.includes(idx)) {
+//                 div.style.borderColor = "green";
+//             } else return;
+//         });
+// };
 
 function getWinner() {
     const plyrGuess = chkGuess();
     equalsCheck(plyrGuess.value, compChoice);
     if (equalsCheck(plyrGuess.value, compChoice) === true) {
+        // seqMatch(plyrGuess.value, compChoice);
+        // checkColorIncSeq(plyrGuess.value, compChoice);
+        divs.style.backgroundColor = "white";
         h1.innerText = 'Tito loved that, You Win!!!'
         gif.innerHTML = '<img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMDI2YzNjYTFhMjhlMzRhNmQwYmVlZGQ1OTEzOTJiNzg5ZjMxY2M2NiZjdD1n/5z9NwuPkZnvvm42Md0/giphy.gif"></img>';
         brd.classList.add("blink-bg-win");
@@ -164,8 +227,9 @@ function getWinner() {
         h1.innerText = 'You LOSE!!';
         gif.innerHTML = '<img src="https://www.mustang6g.com/forums/attachments/you-lose-good-day-sir-gif-7-gif.461102/"></img>';
     } else {
-        checkColorInc(plyrGuess.value, compChoice);
-        seqMatch(plyrGuess.value, compChoice);
+        // checkColorInc(plyrGuess.value, compChoice);
+        // seqMatch(plyrGuess.value, compChoice);
+        checkColorIncSeq(plyrGuess.value, compChoice);
         h1.innerText = "Miles says: Not this time! Try Again!";
         gif.innerHTML = '<img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzhlYWYzNWVjYTAwNzgzMTUzNjQ2OGJjYTVjZTBlYmY2ZGMzOWJjOCZjdD1n/snRsotHB9HZVUyRYfT/giphy.gif"></img>';
         openNextRow();

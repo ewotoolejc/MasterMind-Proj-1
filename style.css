@@ -45,16 +45,20 @@ body {
     color: yellow;
 }
 
+#green {
+    color: green;
+}
+
 col1{
      grid-column: 1/2;
      display: flex;
      align-items: center;
      flex-direction: column;
-     justify-content: space-evenly; 
+     justify-content: space-around; 
 }
 
 col1 > * {
-    margin: 20vmin;
+    margin: 15vmin;
 }
 
 h1 {
