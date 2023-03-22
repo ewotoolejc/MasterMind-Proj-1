@@ -169,12 +169,13 @@ col3 > button {
     padding: 4vmin;
     margin: 7vmin;
     font-size: xxx-large;
+    box-shadow: 3px 3px 5px white;
 }
 
 #Reset {
     background-color: rgb(154, 27, 47);
     color: rgb(168, 146, 98);
-    box-shadow: 3px 3px 5px white;
+
 }
 
 #Reset:hover {
@@ -184,7 +185,6 @@ col3 > button {
 
 #Enter {
     background-color: #f6c492;
-    box-shadow: 3px 3px 5px white;
 }
 
 #Enter:hover {
@@ -192,21 +192,56 @@ col3 > button {
     color: #f6c492;
 }
 
-howto {
+#winningcombo {
+    color: white;
+    border-radius: revert;
+    border: revert;
+    font-size: x-large;
+}
+
+#howtodisplay {
+    padding: 1vmin;
+    margin: 2vmin;
+    font-size: large;
+    color: white;
+    background-color: rgb(25, 55, 45);
+}
+
+#howtodisplay:hover {
+    background-color: rgb(148, 227, 208);
+    color: black;
+}
+
+#howto {
     scale: 90%;
     color: white;
     background-color: rgb(25, 55, 45);
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
     padding: 2vmin;
+    visibility: hidden;
+    border-radius: revert;
+    border: .5vmin whitesmoke;
+    border-style: solid;
+    pointer-events: revert;
 }
 
-howto > * {
+#howto > * {
     color: white;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
-#Close {
+#close {
     background-color: rgb(148, 227, 208);
+    visibility: hidden;
+    padding: 1vmin;
+    margin: 2vmin;
+    font-size: large;
+    color: white;
+}
+
+#close:hover {
+    background-color: rgb(25, 55, 45);
+    color: white;
 }
 
 .blink-bg-win {

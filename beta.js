@@ -1,5 +1,6 @@
 	/*----- constants -----*/
-    const colors = ['white', 'rgb(154, 27, 47)', 'black', 'rgb(168, 146, 98)', 'rgb(246, 196, 146)', 'rgb(93, 20, 34)', 'rgb(148, 227, 208)'];
+const colors = ['white', 'rgb(154, 27, 47)', 'black', 'rgb(168, 146, 98)', 'rgb(246, 196, 146)', 'rgb(93, 20, 34)', 'rgb(148, 227, 208)'];
+const colorNames = [null, 'Red', 'Black', 'Gold', 'Peach', 'Maroon', 'Mint Green'];
 
 	/*----- state variables -----*/
 let board;
@@ -10,13 +11,16 @@ let brdRowOpn = boardOpenGen;
 let rowDivsForChk;
 let rowMv = boardMvGen;
 
+
 	/*----- cached elements  -----*/
 const divs = [...document.querySelectorAll('div')];
 const h1 = document.querySelector('h1');
 const gif = document.querySelector('gif');
 const brd = document.querySelector('main');
-const clse = document.getElementById('Close');
-const howto = document.querySelector('howto');
+const clse = document.getElementById('close');
+const howto = document.getElementById('howto');
+const howToOpen = document.getElementById("howtodisplay");
+const solution = document.getElementById("winningcombo");
 
 	/*----- event listeners -----*/
 const plyAgn = document.getElementById('Reset').addEventListener('click', init);
@@ -37,9 +41,16 @@ const enter = document.getElementById('Enter').addEventListener('click', () => {
     getWinner();
 });
 
-clse.addEventListener('click', () => {
-    howto.style.visibility = 'hidden';
-    clse.style.visibility = 'hidden';
+howToOpen.addEventListener("click", () => {
+    howToOpen.style.visibility = "hidden";
+    howto.style.visibility = "visible";
+    clse.style.visibility = "visible";
+});
+
+clse.addEventListener("click", () => {
+    howto.style.visibility = "hidden";
+    clse.style.visibility = "hidden";
+    howToOpen.style.visibility = "visible";
 });
 
 	/*----- functions -----*/
@@ -129,6 +140,8 @@ function checkColorIncSeq(pg, ca) {
     });
 };
 
+const colNameArr = compChoice.map(num => colorNames[num]);
+
 function getWinner() {
     const plyrGuess = chkGuess();
     equalsCheck(plyrGuess.value, compChoice);
@@ -139,6 +152,7 @@ function getWinner() {
         brd.classList.add("blink-bg-win");
     } else if (equalsCheck(plyrGuess.value, compChoice) === false && countButtonEnterClicks === 6) {
         h1.innerText = 'You LOSE!!';
+        solution.innerHTML = `The solution was <span id=${colNameArr[0]}>${colNameArr[0]}</span>`;
         gif.innerHTML = '<img src="https://media2.giphy.com/media/10h8CdMQUWoZ8Y/giphy.gif?cid=ecf05e4797e9jcwd53tgxv550qd6ni1tiwelxj0yhxekpbyc&rid=giphy.gif&ct=g/"></img>';
     } else {
         checkColorIncSeq(plyrGuess.value, compChoice);
