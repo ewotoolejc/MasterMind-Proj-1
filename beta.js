@@ -15,6 +15,8 @@ const divs = [...document.querySelectorAll('div')];
 const h1 = document.querySelector('h1');
 const gif = document.querySelector('gif');
 const brd = document.querySelector('main');
+const clse = document.getElementById('Close');
+const howto = document.querySelector('howto');
 
 	/*----- event listeners -----*/
 const plyAgn = document.getElementById('Reset').addEventListener('click', init);
@@ -33,6 +35,11 @@ const enter = document.getElementById('Enter').addEventListener('click', () => {
     board[idx] = colors.indexOf(col);
     });
     getWinner();
+});
+
+clse.addEventListener('click', () => {
+    howto.style.visibility = 'hidden';
+    clse.style.visibility = 'hidden';
 });
 
 	/*----- functions -----*/
@@ -132,7 +139,7 @@ function getWinner() {
         brd.classList.add("blink-bg-win");
     } else if (equalsCheck(plyrGuess.value, compChoice) === false && countButtonEnterClicks === 6) {
         h1.innerText = 'You LOSE!!';
-        gif.innerHTML = '<img src="https://www.mustang6g.com/forums/attachments/you-lose-good-day-sir-gif-7-gif.461102/"></img>';
+        gif.innerHTML = '<img src="https://media2.giphy.com/media/10h8CdMQUWoZ8Y/giphy.gif?cid=ecf05e4797e9jcwd53tgxv550qd6ni1tiwelxj0yhxekpbyc&rid=giphy.gif&ct=g/"></img>';
     } else {
         checkColorIncSeq(plyrGuess.value, compChoice);
         h1.innerText = "Miles says: Not this time! Try Again!";
