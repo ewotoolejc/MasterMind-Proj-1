@@ -1,6 +1,6 @@
 	/*----- constants -----*/
 const colors = ['white', 'rgb(154, 27, 47)', 'black', 'rgb(168, 146, 98)', 'rgb(246, 196, 146)', 'rgb(93, 20, 34)', 'rgb(148, 227, 208)'];
-const colorNames = [null, 'Red', 'Black', 'Gold', 'Peach', 'Maroon', 'Mint Green'];
+const colorNames = [null, 'red', 'black', 'gold', 'peach', 'maroon', 'mint-green'];
 
 	/*----- state variables -----*/
 let board;
@@ -61,6 +61,7 @@ board = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 brdRowOpn = boardOpenGen(divs, 4);
 compChoice = getCompAnswer();
 renderBoard();
+solution.style.visibility = "hidden";
 h1.innerHTML = 'Can you win and become...the AUFC MasterMind???';
 gif.innerHTML = '<img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmEzYzdiMWI0ZWZjYzRjNDcyZmQ5MTJjODA2ZDdiZWI4MWQwYjQ4ZSZjdD1z/mnuJDb8D1EiMVHff7k/giphy.gif"></img>';
 brd.classList.remove("blink-bg-win");
@@ -152,7 +153,8 @@ function getWinner() {
         brd.classList.add("blink-bg-win");
     } else if (equalsCheck(plyrGuess.value, compChoice) === false && countButtonEnterClicks === 6) {
         h1.innerText = 'You LOSE!!';
-        solution.innerHTML = `The solution was <span id=${colNameArr[0]}>${colNameArr[0]}</span>`;
+        solution.style.visibility = "visible";
+        solution.innerHTML = `The solution was <span id= "${colNameArr[0]}">${colNameArr[0].toUpperCase()}</span>, <span id= "${colNameArr[1]}">${colNameArr[1].toUpperCase()}</span>, <span id= "${colNameArr[2]}">${colNameArr[2].toUpperCase()}</span>, <span id= "${colNameArr[3]}">${colNameArr[3].toUpperCase()}</span>.`;
         gif.innerHTML = '<img src="https://media2.giphy.com/media/10h8CdMQUWoZ8Y/giphy.gif?cid=ecf05e4797e9jcwd53tgxv550qd6ni1tiwelxj0yhxekpbyc&rid=giphy.gif&ct=g/"></img>';
     } else {
         checkColorIncSeq(plyrGuess.value, compChoice);

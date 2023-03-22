@@ -1,6 +1,6 @@
 * {
     box-sizing: border-box;
-    font-family: 'Sherwood', sans-serif;
+    font-family: 'DM Serif Display', serif;
 }
 
 body {
@@ -67,7 +67,9 @@ h1 {
     text-shadow: 1px 1px 2px black, 3px 3px 8px white;
     text-align: center;
     height: 20vh;
-    margin-bottom: 7vmin;
+    margin: 4vmin 2vmin 2vmin 2vmin;
+    font-family: 'Kaushan Script', cursive;
+    font-size: xxx-large;
 }
 
 gif {
@@ -79,11 +81,11 @@ gif {
 key {
     background-color: grey;
     box-shadow: 10px 10px 5px 12px rgb(154, 27, 47);
-    padding: 5vmin;
+    padding: 2vmin;
     width: 80%;
     flex-shrink: 3;
     background-image: linear-gradient(to bottom right, rgb(168, 146, 98), rgb(154, 27, 47));
-    margin-bottom: 5vmin;
+    margin: 7vmin;
 }
 
 #key {
@@ -166,7 +168,7 @@ col3 {
 }
 
 col3 > button {
-    padding: 4vmin;
+    padding: 2vmin;
     margin: 7vmin;
     font-size: xxx-large;
     box-shadow: 3px 3px 5px white;
@@ -175,6 +177,9 @@ col3 > button {
 #Reset {
     background-color: rgb(154, 27, 47);
     color: rgb(168, 146, 98);
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    font-family: 'Bebas Neue', cursive;
+
 
 }
 
@@ -185,18 +190,27 @@ col3 > button {
 
 #Enter {
     background-color: #f6c492;
+    color: whitesmoke;
+    font-family: 'Bebas Neue', cursive;
 }
 
 #Enter:hover {
     background-color: white;
     color: #f6c492;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 #winningcombo {
-    color: white;
+    color: red;
     border-radius: revert;
     border: revert;
     font-size: x-large;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+    padding: 1vmin;
+    margin: 1vmin;
+    background-color: rgba(174, 179, 190, .5);
+    border-radius: 3vmin;
+    visibility: hidden;
 }
 
 #howtodisplay {
@@ -205,6 +219,8 @@ col3 > button {
     font-size: large;
     color: white;
     background-color: rgb(25, 55, 45);
+    font-family: 'Bebas Neue', cursive;
+    font-size: x-large;
 }
 
 #howtodisplay:hover {
@@ -216,13 +232,13 @@ col3 > button {
     scale: 90%;
     color: white;
     background-color: rgb(25, 55, 45);
-    /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
     padding: 2vmin;
     visibility: hidden;
     border-radius: revert;
     border: .5vmin whitesmoke;
     border-style: solid;
     pointer-events: revert;
+    font-family: 'DM Serif Display', serif;
 }
 
 #howto > * {
