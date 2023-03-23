@@ -64,7 +64,7 @@ col1 > * {
 
 h1 {
     color: #f6c492;
-    text-shadow: 1px 1px 2px black, 3px 3px 8px white;
+    text-shadow: 3px 3px 4px black, 2px 2px 8px white;
     text-align: center;
     height: 20vh;
     margin: 4vmin 2vmin 2vmin 2vmin;
@@ -89,8 +89,10 @@ key {
 }
 
 #key {
-    color: blue;
-    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+    color: rgb(174, 179, 190);
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    font-size: xx-large;
+
 }
 
 key > * {
@@ -149,7 +151,7 @@ row6 {
 
 div {
     border-radius: 50%;
-    border: .5vmin black;
+    border: .75vmin black;
     border-style: solid;
     grid-column: span 1;
     pointer-events: none;
@@ -179,8 +181,6 @@ col3 > button {
     color: rgb(168, 146, 98);
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     font-family: 'Bebas Neue', cursive;
-
-
 }
 
 #Reset:hover {
@@ -239,6 +239,7 @@ col3 > button {
     border-style: solid;
     pointer-events: revert;
     font-family: 'DM Serif Display', serif;
+    margin: 0vmin;
 }
 
 #howto > * {
@@ -250,7 +251,7 @@ col3 > button {
     background-color: rgb(148, 227, 208);
     visibility: hidden;
     padding: 1vmin;
-    margin: 2vmin;
+    margin: 0vmin;
     font-size: large;
     color: white;
 }

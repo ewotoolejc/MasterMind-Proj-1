@@ -26,7 +26,7 @@ A player will then:
 </div>
 
 Initial Game play:
-![Inital Game play](https://i.imgur.com/yaKzogp.png)
+![Initial Screen](https://i.imgur.com/ScxOsya.png)
 
 Guess Screen:
 ![Guess Screen](https://i.imgur.com/xeENxXQ.png)
@@ -51,3 +51,12 @@ Loss Screen:
    ![JavaScript](https://img.shields.io/badge/-JavaScript-05122A?style=flat&logo=javascript)
 
 </div>
+
+<div align="center">
+
+:ice_cube: :package: :ice_cube: 
+## Icebox Items
+
+</div>
+
+- Locking the already selected row(s)

@@ -74,6 +74,7 @@ function renderBoard() {
     const pegEl = document.getElementById(`sq-${idx}`);
     pegEl.style.backgroundColor = colors[pegVal];
     pegEl.style.borderColor = "black";
+    pegEl.style.pointerEvents = "none";
     });
 }
 
