@@ -7,17 +7,18 @@ body {
     /*  viewport units: vh (viewport height), vw, vmin (smallest between vh & vw))  */
       height: 80vh;
       width: 100vw;
-      background-image: url("https://scontent-dfw5-1.xx.fbcdn.net/v/t39.30808-6/296721713_8156138357737219_8402936684182766551_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=730e14&_nc_ohc=EZrxu3mDrB0AX_MHDQm&_nc_ht=scontent-dfw5-1.xx&oh=00_AfDmlGbO_2R_wwdko3U1iBuhVCLXIY0EcikxAAt10S5KbQ&oe=641A43DA");
+      background-image: url("https://images.mlssoccer.com/image/private/t_q-best/mls-atl-prd/d4h7njugi4zozorjkcsl.jpg");
       background-position: center center;
       background-repeat: no-repeat;
       background-attachment: fixed;
       background-size: cover;
       margin: 0;
       display: grid;
-      grid-template-columns: 60vmin 80vmin 60vmin;
+      grid-template-columns: 30vw 45vw 30vw;
       align-items: center;
       justify-content: center;
 }
+
 #red {
     color: rgb(154, 27, 47);
 }
@@ -56,10 +57,6 @@ col1{
      align-items: center;
      flex-direction: column;
      justify-content: space-around; 
-}
-
-col1 > * {
-    margin: 15vmin;
 }
 
 h1 {
@@ -151,27 +148,26 @@ row6 {
 
 div {
     border-radius: 50%;
+    text-align: center;
     border: .75vmin black;
     border-style: solid;
     grid-column: span 1;
     pointer-events: none;
+    
 }
-
-/* div:hover {
-    border: .5vmin rgb(148, 227, 208);
-} */
 
 col3 {
     grid-column: 3/4;
     display: flex;
-    flex-direction: column;
+    flex-flow: column;
     align-items: center;
     justify-content: center;
 }
 
+
 col3 > button {
     padding: 2vmin;
-    margin: 7vmin;
+    margin: 4vmin;
     font-size: xxx-large;
     box-shadow: 3px 3px 5px white;
 }
@@ -181,6 +177,7 @@ col3 > button {
     color: rgb(168, 146, 98);
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     font-family: 'Bebas Neue', cursive;
+    margin-bottom: 5vmin;
 }
 
 #Reset:hover {
@@ -208,7 +205,7 @@ col3 > button {
     text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
     padding: 1vmin;
     margin: 1vmin;
-    background-color: rgba(174, 179, 190, .5);
+    background-color: rgba(174, 179, 190, .8);
     border-radius: 3vmin;
     visibility: hidden;
 }
@@ -229,22 +226,24 @@ col3 > button {
 }
 
 #howto {
-    scale: 90%;
+    scale: 80%;
     color: white;
     background-color: rgb(25, 55, 45);
     padding: 2vmin;
     visibility: hidden;
-    border-radius: revert;
+    border-radius: 1vmin;
     border: .5vmin whitesmoke;
     border-style: solid;
     pointer-events: revert;
-    font-family: 'DM Serif Display', serif;
     margin: 0vmin;
+    font-family: Sherwood, sans-serif;
+    font-size: large;
 }
 
 #howto > * {
     color: white;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    font-size: large;
 }
 
 #close {
