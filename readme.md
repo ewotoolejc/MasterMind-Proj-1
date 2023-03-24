@@ -4,7 +4,7 @@
 # AUFC MasterMind
 :soccer::soccer:
 
-LINK TO GAME PLACEHOLD
+[Direct Link to Game](https://ewotoolejc.github.io/MasterMind-Proj-1/)
 </div>
 
 MasterMind is "code breaker" or sequence guessing challenge using colored "pegs" on a board that is 4 pegs across and can be up to 12 guesses long. This version uses 6 color options stemming from Atlanta United FC colors and 6 rows in which to make guesses. Also, this version allows for multiples of colors (typically a house rule setup in person). The game will begin right away because as soon as the page loads, the algorithm will fire off a randomly generated seuence for the player to guess.
@@ -26,16 +26,16 @@ A player will then:
 </div>
 
 Initial Game play:
-![Initial Screen](https://i.imgur.com/ScxOsya.png)
+![Initial Screen](https://i.imgur.com/uSppwPL.jpg)
 
 Guess Screen:
-![Guess Screen](https://i.imgur.com/xeENxXQ.png)
+![Guess Screen](https://i.imgur.com/TIVA5lH.jpg)
 
 Win Screen:
-![Win Screen](https://i.imgur.com/RTBeZg3.png)
+![Win Screen](https://i.imgur.com/dWrmIQZ.jpg)
 
 Loss Screen:
-![Loss screen](https://i.imgur.com/OuF2USR.png)
+![Loss Screen](https://i.imgur.com/n6hNxs6.jpg)
 
 <div align="center">
 

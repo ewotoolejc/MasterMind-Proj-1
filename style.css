@@ -54,6 +54,7 @@ body {
 col1{
      grid-column: 1/2;
      display: flex;
+     width: 25vw;
      align-items: center;
      flex-direction: column;
      justify-content: space-around; 
@@ -159,6 +160,7 @@ div {
 col3 {
     grid-column: 3/4;
     display: flex;
+    width: 29vw;
     flex-flow: column;
     align-items: center;
     justify-content: center;
