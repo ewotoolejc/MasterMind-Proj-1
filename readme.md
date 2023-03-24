@@ -9,16 +9,16 @@
 
 -----
 
-MasterMind is "code breaker" or sequence guessing challenge using colored "pegs" on a board that is 4 pegs across and can be up to 12 guesses long. This version uses 6 color options stemming from Atlanta United FC colors and 6 rows in which to make guesses. Also, this version allows for multiples of colors (typically a house rule setup in person). The game will begin right away because as soon as the page loads, the algorithm will fire off a randomly generated seuence for the player to guess.
+MasterMind is "code breaker" or sequence guessing challenge using colored "pegs" on a board that is 4 pegs across and can be up to 12 guesses long. This version uses 6 color options stemming from Atlanta United FC colors and 6 rows in which to make guesses. Also, this version allows for multiples of colors (typically a house rule setup in person). The game will begin right away because as soon as the page loads, the algorithm will fire off a randomly generated sequence for the player to guess.
 
 A player will then:
 1. Select a color in the beginning bottom row for all four "pegs".
 2. Upon making all selections and leaving none "white"/blank, they will click the "Enter" button to have their guess checked.
 3. One of three things will be returned by the system: 
-    - An un-hgihlighted peg, which means there was no match in color or sequence to the answer.
+    - An un-highlighted peg, which means there was no match in color or sequence to the answer.
     - A yellow highlight/border to indicate the color is included in the answer but not in that sequence.
     - A green highlight/border to indicate both the color and sequence are correct.
-4. The player will not be able to select any pegs past the current row in play.
+4. The player will not be able to select any pegs above the current row in play.
 5. The player has up to 6 guesses or the game is over and a message indicating as such will be rendered.
 ------------------
 
