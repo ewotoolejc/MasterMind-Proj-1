@@ -153,8 +153,7 @@ div {
     border: .75vmin black;
     border-style: solid;
     grid-column: span 1;
-    pointer-events: none;
-    
+    pointer-events: none; 
 }
 
 col3 {

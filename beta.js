@@ -91,8 +91,6 @@ function openNextRow() {
     rowDivsForChk = row;
 }
 
-console.log(compChoice);
-
 function getCompAnswer() {
     const choices = [];
     for (let i = 0; i < 4; i++) {
