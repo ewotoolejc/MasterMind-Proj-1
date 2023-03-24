@@ -7,6 +7,8 @@
 [Direct Link to Game](https://ewotoolejc.github.io/MasterMind-Proj-1/)
 </div>
 
+-----
+
 MasterMind is "code breaker" or sequence guessing challenge using colored "pegs" on a board that is 4 pegs across and can be up to 12 guesses long. This version uses 6 color options stemming from Atlanta United FC colors and 6 rows in which to make guesses. Also, this version allows for multiples of colors (typically a house rule setup in person). The game will begin right away because as soon as the page loads, the algorithm will fire off a randomly generated seuence for the player to guess.
 
 A player will then:
@@ -18,6 +20,7 @@ A player will then:
     - A green highlight/border to indicate both the color and sequence are correct.
 4. The player will not be able to select any pegs past the current row in play.
 5. The player has up to 6 guesses or the game is over and a message indicating as such will be rendered.
+------------------
 
 <div align="center">
 
@@ -37,6 +40,8 @@ Win Screen:
 Loss Screen:
 ![Loss Screen](https://i.imgur.com/n6hNxs6.jpg)
 
+----
+
 <div align="center">
 
 :desktop_computer: :desktop_computer: :desktop_computer:
@@ -52,6 +57,8 @@ Loss Screen:
 
 </div>
 
+---------
+
 <div align="center">
 
 :ice_cube: :package: :ice_cube: 
@@ -60,3 +67,5 @@ Loss Screen:
 </div>
 
 - Locking the already selected row(s)
+- More flexible by screen size (Didn't start with an MFD approach or build with flexible params everywhere)
+- Other CSS elements don't do exactly what I had intended
