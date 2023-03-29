@@ -11,6 +11,7 @@ let brdRowOpn = boardOpenGen;
 let rowDivsForChk;
 let rowMv = boardMvGen;
 let colNameArr;
+let colNameArr;
 
 	/*----- cached elements  -----*/
 const divs = [...document.querySelectorAll('div')];
@@ -148,7 +149,7 @@ function getWinner() {
         brd.classList.add("blink-bg-win");
     } else if (equalsCheck(plyrGuess.value, compChoice) === false && countButtonEnterClicks === 6) {
         colNameArr = compChoice.map(num => colorNames[num]);
-	h1.innerText = 'You LOSE!!';
+        h1.innerText = 'You LOSE!!';
         solution.style.visibility = "visible";
         solution.innerHTML = `The solution was <span id= "${colNameArr[0]}">${colNameArr[0].toUpperCase()}</span>, <span id= "${colNameArr[1]}">${colNameArr[1].toUpperCase()}</span>, <span id= "${colNameArr[2]}">${colNameArr[2].toUpperCase()}</span>, <span id= "${colNameArr[3]}">${colNameArr[3].toUpperCase()}</span>.`;
         gif.innerHTML = '<img src="https://media2.giphy.com/media/10h8CdMQUWoZ8Y/giphy.gif?cid=ecf05e4797e9jcwd53tgxv550qd6ni1tiwelxj0yhxekpbyc&rid=giphy.gif&ct=g/"></img>';
