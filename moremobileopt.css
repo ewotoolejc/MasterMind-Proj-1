@@ -1,0 +1,265 @@
+@media (min-width: 600px) {
+* {
+    box-sizing: border-box;
+    font-family: 'DM Serif Display', serif;
+}
+    
+body {
+    background-image: url("https://images.mlssoccer.com/image/private/t_q-best/mls-atl-prd/d4h7njugi4zozorjkcsl.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 30vw 2fr 1fr;
+}
+    
+#rotate {
+    display: none;
+}
+
+#red {
+    color: rgb(154, 27, 47);
+}
+    
+#black {
+    color: black;
+}
+    
+#gold {
+    color: rgb(168, 146, 98); 
+}
+    
+#peach {
+    color: #f6c492;
+}
+    
+#maroon {
+    color: rgb(93, 20, 34);
+}
+    
+#mint-green {
+    color: rgb(148, 227, 208);
+}
+    
+#yellow {
+    color: yellow;
+}
+    
+#green {
+    color: green;
+}
+    
+col1{
+    grid-column: 1/2;
+    display: inline-grid;
+    grid-template-columns: 30vw;
+    height: 100vh;
+    align-items: center;
+    grid-template-rows: [row1-start] 25% [row1-end row2-start] 45% [row2-end row3-start] 30% [row3-end];
+}
+    
+h1 {
+    color: #f6c492;
+    text-shadow: 3px 3px 4px black, 2px 2px 8px white;
+    place-self: center;
+    text-align: center;
+    padding: 5vmin;
+    margin: 3vmin;
+    font-family: 'Kaushan Script', cursive;
+    font-size: large;
+    display: inline;       
+}
+    
+gif {
+    scale: 25%;
+    margin: 1vmin;
+    justify-self: center;
+}
+    
+key {
+    grid-row: 3/4;
+    box-shadow: 1vmin 1vmin .5vmin 1.2vmin rgb(154, 27, 47);
+    justify-self: start;
+    padding: 1vmin;
+    background-image: linear-gradient(to bottom right, rgb(168, 146, 98), rgb(154, 27, 47));
+    margin: 3vmin;
+    max-height: 25vmin;
+    overflow-y: auto;
+    display: inline; 
+}
+    
+#key {
+    color: rgb(174, 179, 190);
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    font-size: 1.4vw;
+}
+    
+key > * {
+    color: whitesmoke;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    font-size: 1.2vw;
+    margin: 0;
+}
+    
+main {
+    grid-column: 2/3;
+    display: inline; 
+    height: 100vh;
+    background-image: radial-gradient(circle, black, rgb(154, 27, 47), rgb(168, 146, 98));
+    display: grid;
+    grid-template-rows: repeat(6, auto);
+    row-gap: 2vmin;
+    padding: 3vmin;
+    border-radius: 5vmin;
+}
+    
+main > * {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-column: span 4;
+    column-gap: 1vmin;
+}
+    
+row1 {
+    grid-row-start: 7;
+    grid-row-end: 6;
+}
+    
+row2 {
+    grid-row-start: 6;
+    grid-row-end: 5;   
+}
+    
+row3 {
+    grid-row-start: 5;
+    grid-row-end: 4;
+}
+    
+row4 {
+    grid-row-start: 4;
+    grid-row-end: 3;
+}
+    
+row5 {
+    grid-row-start: 3;
+    grid-row-end: 2;
+}
+    
+row6 {
+    grid-row-start: 2;
+    grid-row-end: 1;
+}
+    
+div {
+    border-radius: 50%;
+    text-align: center;
+    border: .75vmin black;
+    border-style: solid;
+    grid-column: span 1;
+    pointer-events: none; 
+}
+    
+col3 {
+    grid-column: 3/4;
+    display: grid;
+    height: 110vh;
+    grid-template-rows: [row1-start] 15% [row1-end row2-start] 15% [row2-end row3-start] 10% [row3-end row4-start] 10% [row4-end row5-start] 10% [row5-end row6-start] 10% [row6-end row7-start] 10% [row7-end];
+    align-items: center;
+    display: inline; 
+}
+    
+    
+col3 > button {
+    padding: 1vmin;
+    margin: 7vmin;
+    font-size: large;
+    box-shadow: 3px 3px 5px white;
+}
+    
+#Reset {
+    grid-row: 2 / 3;
+    background-color: rgb(154, 27, 47);
+    color: rgb(168, 146, 98);
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    font-family: 'Bebas Neue', cursive;
+}
+    
+#Enter {
+    grid-row: 3 / 4;
+    background-color: #f6c492;
+    color: whitesmoke;
+    font-family: 'Bebas Neue', cursive;
+}
+    
+    #winningcombo {
+    grid-row: 1 / 2;
+    color: red;
+    border: revert;
+    font-size: small;
+    align-self: end;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+    padding: 1vmin;
+    margin: 1vmin;
+    background-color: rgba(174, 179, 190, .8);
+    border-radius: 3vmin;
+    visibility: hidden;
+}
+    
+#howtodisplay {
+    grid-row: 5 / 6;
+    color: white;
+    font-size: x-small;
+    background-color: rgb(25, 55, 45);
+    font-family: 'Bebas Neue', cursive;
+    font-size: large;
+}
+
+#howto {
+    grid-row: 7 / 8;
+    scale: 90%;
+    color: white;
+    max-height: 38vmin;
+    background-color: rgb(25, 55, 45);
+    padding: 2vmin;
+    visibility: hidden;
+    border-radius: 1vmin;
+    border: .5vmin whitesmoke;
+    border-style: solid;
+    pointer-events: revert;
+    margin: 1vmin;
+    font-family: Sherwood, sans-serif;
+    font-size: small;
+    overflow-y: auto;
+}
+    
+#howto > * {
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    font-size: x-small;
+    text-align: left;
+}
+    
+#rules {
+    text-align: left;
+}
+    
+#close {
+    background-color: rgb(148, 227, 208);
+    visibility: hidden;
+    padding: 1vmin;
+    margin: 0vmin;
+    font-size: x-small;
+    color: white;
+}
+    
+.blink-bg-win {
+    animation: blinkingBackground 2s infinite;
+}
+    
+@keyframes blinkingBackground {
+    0% {box-shadow: 0 0 3vmin white;}
+    50% {box-shadow: 0 0 5vmin rgb(148, 227, 208);}   
+}
+}

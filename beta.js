@@ -11,7 +11,6 @@ let brdRowOpn = boardOpenGen;
 let rowDivsForChk;
 let rowMv = boardMvGen;
 let colNameArr;
-let colNameArr;
 
 	/*----- cached elements  -----*/
 const divs = [...document.querySelectorAll('div')];
