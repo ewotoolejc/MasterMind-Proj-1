@@ -65,7 +65,8 @@ Loss Screen:
 ## Icebox Items
 
 </div>
+- The below items were completed a few weeks post presentation of this Project. (5/7/23)
 
-- Locking the already selected row(s)
-- More flexible by screen size (Didn't start with an MFD approach or build with flexible params everywhere)
-- Other CSS elements don't do exactly what I had intended
+- ~~Locking the already selected row(s) ~~
+- ~~ More flexible by screen size (Didn't start with an MFD approach or build with flexible params everywhere) ~~
+- ~~ Other CSS elements don't do exactly what I had intended ~~
